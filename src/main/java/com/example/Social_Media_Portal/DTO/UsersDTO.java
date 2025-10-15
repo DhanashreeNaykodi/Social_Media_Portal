@@ -1,6 +1,5 @@
 package com.example.Social_Media_Portal.DTO;
 import com.example.Social_Media_Portal.Constants.Role;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

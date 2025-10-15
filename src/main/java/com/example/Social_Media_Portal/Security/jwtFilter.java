@@ -17,7 +17,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.security.SignatureException;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Optional;
@@ -26,11 +25,14 @@ import java.util.Optional;
 @Component
 public class jwtFilter extends OncePerRequestFilter {
 
-    @Autowired
     JWTAuth jwtAuth;
+    UserRepository userRepository;
 
     @Autowired
-    UserRepository userRepository;
+    public jwtFilter(JWTAuth jwtAuth, UserRepository userRepository) {
+        this.jwtAuth = jwtAuth;
+        this.userRepository = userRepository;
+    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -88,9 +90,6 @@ public class jwtFilter extends OncePerRequestFilter {
         catch (Exception e) {
             sendErrorResponse(response, "Authentication failed");
         }
-//        catch (Exception e) {
-//            sendErrorResponse(response, "Invalid JWT token");
-//        }
     }
 
     private void sendErrorResponse(HttpServletResponse response, String message) throws IOException {

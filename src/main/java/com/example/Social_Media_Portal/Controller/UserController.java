@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<Map<String, Object>> RegisterUser(@Valid @RequestBody SignupDTO signupDTO) {
+    public ResponseEntity<Map<String, Object>> registerUser(@Valid @RequestBody SignupDTO signupDTO) {
         return userService.saveNewUser(signupDTO);
     }
 

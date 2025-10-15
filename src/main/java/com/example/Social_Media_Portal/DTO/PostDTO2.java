@@ -1,7 +1,6 @@
 package com.example.Social_Media_Portal.DTO;
 
 import com.example.Social_Media_Portal.Constants.Status;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.LocalDateTime;

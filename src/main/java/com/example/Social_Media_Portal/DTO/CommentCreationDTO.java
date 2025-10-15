@@ -14,7 +14,5 @@ public class CommentCreationDTO {
     @NotBlank(message = "Content cannot be blank")
     private String content;
 
-//    @NotBlank(message = "Post Id is required")
     private Long postId;
-//    private Long userId;
 }

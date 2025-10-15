@@ -20,7 +20,5 @@ public class PostDTO {
     //new field
     private String username;
 
-    //new added to show approved comments also with posts on feed
-//    private List<CommentDTO> commentDTOList;
 }
 
